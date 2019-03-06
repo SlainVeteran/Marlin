@@ -138,7 +138,7 @@
 #endif
 
 #if DISABLED(SPINDLE_LASER_ENABLE) && ENABLED(SANGUINOLOLU_V_1_2) && !(ENABLED(ULTRA_LCD) && ENABLED(NEWPANEL))  // try to use IO Header
-  #define CASE_LIGHT_PIN     4   // MUST BE HARDWARE PWM  - see if IO Header is available
+  #define CASE_LIGHT_PIN     -1   // MUST BE HARDWARE PWM  - see if IO Header is available
 #endif
 
 /**
@@ -166,10 +166,10 @@
         // Pin 27 is taken by LED_PIN, but Melzi LED does nothing with
         // Marlin so this can be used for BEEPER_PIN. You can use this pin
         // with M42 instead of BEEPER_PIN.
-        #define BEEPER_PIN      27
+        #define BEEPER_PIN      -1 // 27 for BEEPER
       #else        // Sanguinololu >=1.3
-        #define LCD_PINS_RS      4
-        #define LCD_PINS_ENABLE 17
+        #define LCD_PINS_RS     10
+        #define LCD_PINS_ENABLE 11
         #define LCD_PINS_D4     30
         #define LCD_PINS_D5     29
         #define LCD_PINS_D6     28
